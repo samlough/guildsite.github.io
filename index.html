@@ -2,13 +2,61 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Page Title</title>
+  <title>Loot Distribution App</title>
   <link rel="stylesheet" href="styles.css">
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.8/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.8/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.8/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.8/firebase-functions.js"></script>
 </head>
 <body>
-  <h1>Hello Sam!</h1>
-  <!-- Your content goes here -->
-  <script src="script.js"></script>
+  <div id="leader-login" class="hidden">
+    <h2>Leader Login</h2>
+    <form id="login-form">
+      <input type="email" id="login-email" placeholder="Email" required />
+      <input type="password" id="login-password" placeholder="Password" required />
+      <button type="submit">Login</button>
+    </form>
+    <p id="login-error" class="error"></p>
+  </div>
+
+  <div id="leader-dashboard" class="hidden">
+    <h2>Leader Dashboard</h2>
+    <button id="logout-button">Logout</button>
+    <h3>Add New Loot Item</h3>
+    <form id="add-loot-form">
+      <input type="text" id="loot-name" placeholder="Loot Name" required />
+      <textarea id="loot-description" placeholder="Description" required></textarea>
+      <button type="submit">Add Loot</button>
+    </form>
+    <h3>Current Loot Items</h3>
+    <div id="loot-list"></div>
+  </div>
+
+  <div id="member-view">
+    <h2>Loot Distribution</h2>
+    <div id="active-loot"></div>
+    <h3>Archived Loot</h3>
+    <div id="archived-loot"></div>
+  </div>
+
+  <!-- Member Roll/Vote Modal -->
+  <div id="roll-modal" class="modal hidden">
+    <div class="modal-content">
+      <span class="close-button">&times;</span>
+      <h2>Roll for <span id="modal-loot-name"></span></h2>
+      <form id="roll-form">
+        <input type="text" id="member-name" placeholder="Your Name" required />
+        <button type="submit">Roll</button>
+      </form>
+      <p id="roll-error" class="error"></p>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
 </body>
 </html>
+
