@@ -1,29 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loot Distribution</title>
     <link rel="stylesheet" href="styles.css">
     <script src="app.js"></script>
-</head>
-<body>
-    <!-- Navigation -->
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.8/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.8/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.8/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.8/firebase-functions.js"></script>
+  </head>
+  <body>
     <nav>
-        <a href="#">Home</a>
-        <a href="#loot-list">Loot List</a>
-        <a href="#archived-loot">Archived Loot</a>
-        <a href="#sign-in">Sign In</a>
+      <a href="/">Home</a>
+      <a href="/leader-dash">Loot List</a>
+      <a href="#archived-loot">Archived Loot</a>
+      <a href="#sign-in">Sign In</a>
     </nav>
-
-    <!-- Welcome Message -->
-    <header>
-        <h1>Welcome to the Guild Loot Distribution!</h1>
-        <p>Here you can view available loot and roll for your chance to win. Leaders can sign in to manage loot items.</p>
-    </header>
-
-    <!-- Loot List Section -->
-    <section id="loot-list">
+    <div id="leader-login" class="hidden">
+      <h2>Leader Login</h2>
+      <form id="login-form">
+        <input type="email" id="login-email" placeholder="Email" required />
+        <input type="password" id="login-password" placeholder="Password" required />
+        <button type="submit">Login</button>
+      </form>
+      <p id="login-error" class="error"></p>
+    </div>
+      <!-- Loot List Section -->
+      <section id="loot-list">
         <h2>Current Loot</h2>
         <div class="loot-item">
             <h3>Item Name</h3>
@@ -36,16 +42,7 @@
         </div>
         <!-- Repeat for other items -->
     </section>
-
-    <!-- Sign In for Leaders -->
-    <section id="sign-in">
-        <h2>Leader Sign-In</h2>
-        <button onclick="signIn()">Sign In with Firebase</button>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; Guild Loot Distribution App | <a href="#archived-loot">View Archived Loot</a></p>
-    </footer>
-</body>
+    <script src="app.js"></script>
+  </body>
 </html>
+

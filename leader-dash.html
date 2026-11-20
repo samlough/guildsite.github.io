@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Web Page</title>
+    
+    <!-- Link to an external CSS file (optional) -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Meta description for SEO -->
+    <meta name="description" content="This is a basic boilerplate page.">
+    
+    <!-- Open Graph tags for better social sharing (optional) -->
+    <meta property="og:title" content="Basic Web Page">
+    <meta property="og:description" content="A simple boilerplate for starting a new HTML page.">
+    <meta property="og:image" content="thumbnail.jpg">
+    <meta property="og:url" content="http://example.com">
+
+    <!-- Favicon for the browser tab -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- Main content of the page -->
+    <header>
+        <h1>Leader Dashboard</h1>
+    </header>
+
+    <body>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#loot-list">Loot List</a>
+            <a href="#archived-loot">Archived Loot</a>
+            <a href="#sign-in">Sign In</a>
+        </nav>
+        <div id="leader-dashboard">
+            <h2>Leader Dashboard</h2>
+            <button id="logout-button">Logout</button>
+            <h3>Add New Loot Item</h3>
+            <form id="add-loot-form">
+              <input type="text" id="loot-name" placeholder="Loot Name" required />
+              <textarea id="loot-description" placeholder="Description" required></textarea>
+              <button type="submit">Add Loot</button>
+            </form>
+            <h3>Current Loot Items</h3>
+            <div id="loot-list"></div>
+          </div>
+
+    </body>
+
+    <footer>
+        <p>&copy; 2024 Your Name. All rights reserved.</p>
+    </footer>
+
+    <!-- Link to an external JavaScript file (optional) -->
+    <script src="script.js"></script>
+</body>
+</html>
